@@ -1,0 +1,60 @@
+{
+  "name": "zombie-defense",
+  "version": "1.0.0",
+  "description": "Zombie Defense Game",
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com"
+  },
+  "main": "electron-main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win"
+  },
+  "dependencies": {
+    "@react-three/drei": "9.92.7",
+    "@react-three/fiber": "8.13.0",
+    "phaser": "^3.60.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "three": "0.161.0"
+  },
+  "devDependencies": {
+    "electron": "28.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.yourgame.zombiedefense",
+    "productName": "Zombie Defense",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "assets/**/*",
+      "!dist/**/*",
+      "!node_modules/**/*",
+      "!src/**/*",
+      "!*.md"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "assets/icons/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Zombie Defense"
+    }
+  }
+}
